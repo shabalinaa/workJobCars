@@ -1,20 +1,36 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/car.css' %}">
     <meta charset="UTF-8">
     <title>Список экипажей</title>
 </head>
 <body>
-    <div>
+    <div class="page-header">
         <h1><a href="/">ООО "Автоперевозки"</a></h1>
     </div>
 
-        <div>
+        <div class="post">
             <h2><a href="">Водители</a></h2>
-            <p>Список всех водителей компании</p>
+            <table border="0" cellpadding="10">
+                <tr>
+                    <th>Ф.И.О.</th>
+                    <th>Стаж работы</th>
+                </tr>
+                {% for driver in drivers %}
+                <tr>
+                    <td>{{driver.fio}}</td>
+                    <td>{{driver.experience}}</td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
 
-        <div>
+        <div class="post">
             <h2><a href="">Автомобили</a></h2>
 
             <table border="0" cellpadding="10">
@@ -33,9 +49,22 @@
             </table>
         </div>
 
-        <div>
+        <div class="post">
             <h2><a href="">Экипаж</a></h2>
-            <p>Список сформированных экипажей</p>
+            <table border="0" cellpadding="10">
+                <tr>
+                    <th>Name</th>
+                    <th>Водитель</th>
+                    <th>Автомобиль</th>
+                </tr>
+                {% for crew in crews %}
+                <tr>
+                    <td>{{crew.name}}</td>
+                    <td>{{crew.driver}}</td>
+                    <td>{{crew.car}}</td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
 </body>
 </html>
