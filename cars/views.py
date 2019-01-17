@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def table_all(request):
+    return render(request, 'cars/table_all.html', {})
