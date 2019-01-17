@@ -16,7 +16,21 @@
 
         <div>
             <h2><a href="">Автомобили</a></h2>
-            <p>Список всех автомобилей компании</p>
+
+            <table border="0" cellpadding="10">
+                <tr>
+                    <th>Номер</th>
+                    <th>Модель</th>
+                    <th>Цвет</th>
+                </tr>
+                {% for car in cars %}
+                <tr>
+                    <td>{{car.number}}</td>
+                    <td>{{car.model}}</td>
+                    <td>{{car.color}}</td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
 
         <div>

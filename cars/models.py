@@ -20,7 +20,7 @@ from django.utils import timezone
 
 class Car(models.Model):
     color = models.CharField(max_length=30)
-    number = models.IntegerField()
+    number = models.CharField(max_length=30)
     model = models.CharField(max_length=30)
 
     def __str__(self):
