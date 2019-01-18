@@ -1,7 +1,8 @@
 .page-header {
     #background-color: #ff9400;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 20px 20px 10px;
+
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -16,9 +17,6 @@
 
 h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
-}
-.date {
-    color: #828282;
 }
 
 .save {
@@ -45,6 +43,28 @@ h1, h2, h3, h4 {
 }
 
 table {
-border-collapse: collapse; /*убираем пустые промежутки между ячейками*/
-border: 1px solid grey; /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+  table-layout: fixed;
+  #width: 100%;
+  border-collapse: collapse;
+  #border: 3px solid purple;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 10px;
 }
