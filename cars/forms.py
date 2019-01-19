@@ -11,7 +11,7 @@ class DriversForm(forms.ModelForm):
         model = Driver
         fields = ('fio', 'experience',)
 
-class CreawForm(forms.ModelForm):
+class CrewForm(forms.ModelForm):
     class Meta:
         model = Crew
         fields = ('name', 'driver', 'car')

@@ -1,7 +1,7 @@
 {% extends 'cars/base.html' %}
 {% block content %}
         <div class="post">
-            <h2><a href="">Водители </a></h2>
+            <h2><a href="">Водители </a>  <a href="{% url 'driver_new' %}" class="driver"><span class="glyphicon glyphicon-plus"></span></a> </h2></h2>
             <table border="0" cellpadding="10">
                 <tr>
                     <th>Ф.И.О.</th>
@@ -11,15 +11,15 @@
                 <tr>
                     <td>{{driver.fio}}</td>
                     <td>{{driver.experience}}</td>
-                    <td><span class="glyphicon glyphicon-pencil"></span></a></td>
-                    <td><span class="glyphicon glyphicon-remove"></span></a></td>
+                    <td><a href="{% url 'driver_edit' pk=driver.pk %}" class="post"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                    <td><a href="{% url 'driver_delete' pk=driver.pk %}"><span class="glyphicon glyphicon-remove"></span></a></td>
                 </tr>
                 {% endfor %}
             </table>
         </div>
 
         <div class="post">
-            <h2><a href="">Автомобили</a>  <a href="{% url 'car_new' %}" class="post"><span class="glyphicon glyphicon-plus"></span></a> </h2>
+            <h2><a href="">Автомобили</a>  <a href="{% url 'car_new' %}" class="car"><span class="glyphicon glyphicon-plus"></span></a> </h2>
 
             <table border="0" cellpadding="10">
                 <tr>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="post">
-            <h2><a href="">Экипаж </a></h2>
+            <h2><a href="">Экипаж </a><a href="{% url 'crew_new' %}" class="creaw"><span class="glyphicon glyphicon-plus"></span></a> </h2>
             <table border="0" cellpadding="10">
                 <tr>
                     <th>Name</th>
@@ -52,8 +52,8 @@
                     <td>{{crew.name}}</td>
                     <td>{{crew.driver}}</td>
                     <td>{{crew.car}}</td>
-                    <td><span class="glyphicon glyphicon-pencil"></span></a></td>
-                    <td><span class="glyphicon glyphicon-remove"></span></a></td>
+                    <td><a href="{% url 'crew_edit' pk=crew.pk %}" class="post"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                    <td><a href="{% url 'crew_delete' pk=crew.pk %}"><span class="glyphicon glyphicon-remove"></span></a></td>
                 </tr>
                 {% endfor %}
             </table>
